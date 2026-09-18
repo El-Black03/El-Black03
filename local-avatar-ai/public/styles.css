@@ -1,0 +1,286 @@
+:root {
+  --bg: #edf4f1;
+  --panel: #ffffff;
+  --border: #dfeae6;
+  --soft: #f2f7f4;
+  --text: #1d2a2a;
+  --muted: #758885;
+  --green: #4b9076;
+  --green-dark: #346c5b;
+  --shadow: rgba(19, 44, 39, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 20% 10%, #d9f5e9, transparent 38%), var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app {
+  width: min(1040px, 94vw);
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 22px;
+}
+
+.avatar-card, .chat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  box-shadow: 0 18px 45px var(--shadow);
+}
+
+.avatar-card {
+  padding: 25px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  font-size: 12px;
+  color: #43705f;
+  margin-bottom: 22px;
+}
+
+.status span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #31b878;
+  margin-right: 5px;
+}
+
+.avatar {
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  background: #f0b58f;
+  position: relative;
+  overflow: hidden;
+  margin: 4px 0 20px;
+  box-shadow: inset 0 -13px 0 #df966e;
+}
+
+.hair {
+  position: absolute;
+  inset: -25px -14px auto;
+  height: 105px;
+  background: #2d2729;
+  border-radius: 50% 50% 40% 45%;
+  z-index: 2;
+}
+
+.face {
+  position: absolute;
+  left: 40px;
+  top: 72px;
+  width: 125px;
+  height: 114px;
+  background: #f4ba95;
+  border-radius: 45% 45% 48% 48%;
+  z-index: 3;
+}
+
+.eye {
+  position: absolute;
+  top: 38px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #332c2a;
+}
+
+.eye.left { left: 27px; }
+.eye.right { right: 27px; }
+
+.nose {
+  position: absolute;
+  left: 59px;
+  top: 47px;
+  width: 8px;
+  height: 20px;
+  border-left: 2px solid #d7916e;
+  border-radius: 50%;
+}
+
+.mouth {
+  position: absolute;
+  left: 47px;
+  top: 80px;
+  width: 33px;
+  height: 11px;
+  border-bottom: 3px solid #843f45;
+  border-radius: 50%;
+}
+
+.ear {
+  position: absolute;
+  top: 94px;
+  width: 26px;
+  height: 45px;
+  background: #e6a27d;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.ear.left { left: 29px; }
+.ear.right { right: 29px; }
+
+.avatar-card h1 {
+  font-size: 22px;
+  margin: 0 0 7px;
+}
+
+.avatar-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+.voice-toggle {
+  font-size: 13px;
+  color: #55665f;
+}
+
+.chat-card {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9efed;
+  padding: 0 3px 18px;
+}
+
+header strong {
+  display: block;
+  font-size: 20px;
+}
+
+header small {
+  display: block;
+  color: #82908b;
+  margin-top: 5px;
+}
+
+.ghost {
+  border: 0;
+  background: transparent;
+  color: #588172;
+  cursor: pointer;
+}
+
+.messages {
+  flex: 1;
+  padding: 20px 4px;
+  overflow: auto;
+  min-height: 390px;
+  max-height: 540px;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 12px 15px;
+  border-radius: 17px;
+  margin: 10px 0;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.bot {
+  background: #edf7f2;
+  color: #214237;
+  margin-right: auto;
+}
+
+.me {
+  background: var(--green);
+  color: white;
+  margin-left: auto;
+}
+
+.typing { opacity: 0.6; }
+
+.composer {
+  display: flex;
+  gap: 9px;
+  border-top: 1px solid #e9efed;
+  padding-top: 17px;
+}
+
+.composer input {
+  flex: 1;
+  border: 1px solid #d7e4df;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: inherit;
+  outline: none;
+}
+
+.composer input:focus {
+  border-color: #63a88e;
+}
+
+.round, .send {
+  border: 0;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.round {
+  width: 46px;
+  background: #e8f4ee;
+  font-size: 19px;
+}
+
+.send {
+  padding: 0 18px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.listening { background: #ffd9d9 !important; }
+
+.hint {
+  font-size: 11px;
+  color: #9aa8a3;
+  text-align: center;
+  margin: 13px 0 0;
+}
+
+@media (max-width: 720px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar-card { padding: 18px; }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+    transform: scale(0.8);
+    margin: -8px 0 -5px;
+  }
+
+  .avatar-card p { margin-bottom: 10px; }
+
+  .chat-card {
+    min-height: 560px;
+  }
+}

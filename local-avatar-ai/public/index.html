@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tu compañero local</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="avatar-card" aria-label="Avatar del asistente">
+      <div class="status"><span></span> Privado y local</div>
+      <div class="avatar" id="avatar" aria-hidden="true">
+        <div class="hair"></div>
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="face">
+          <i class="eye left"></i>
+          <i class="eye right"></i>
+          <div class="nose"></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <h1>Tu compañero</h1>
+      <p>Habla conmigo sin mandar tus conversaciones a internet.</p>
+      <label class="voice-toggle">
+        <input id="speakToggle" type="checkbox" checked /> Leer mis respuestas en voz alta
+      </label>
+    </section>
+
+    <section class="chat-card">
+      <header>
+        <div>
+          <strong>Hola 👋</strong>
+          <small>Escribe o pulsa el micrófono para hablar</small>
+        </div>
+        <button id="clearBtn" class="ghost">Limpiar</button>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <form id="chatForm" class="composer">
+        <button type="button" id="micBtn" class="round" title="Hablar" aria-label="Hablar">🎙️</button>
+        <input id="messageInput" autocomplete="off" placeholder="Escribe algo..." required />
+        <button type="submit" class="send">Enviar</button>
+      </form>
+
+      <p id="hint" class="hint">Consejo: si instalas Ollama, la IA responderá con un modelo local real; si no, la app sigue funcionando con aviso de prueba.</p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
